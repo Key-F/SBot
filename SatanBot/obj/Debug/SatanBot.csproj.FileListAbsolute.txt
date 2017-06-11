@@ -1,0 +1,11 @@
+c:\users\keyf\documents\visual studio 2013\Projects\SatanBot\SatanBot\bin\Debug\SatanBot.exe.config
+c:\users\keyf\documents\visual studio 2013\Projects\SatanBot\SatanBot\bin\Debug\SatanBot.exe
+c:\users\keyf\documents\visual studio 2013\Projects\SatanBot\SatanBot\bin\Debug\SatanBot.pdb
+c:\users\keyf\documents\visual studio 2013\Projects\SatanBot\SatanBot\bin\Debug\WebDriver.dll
+c:\users\keyf\documents\visual studio 2013\Projects\SatanBot\SatanBot\bin\Debug\WebDriver.xml
+c:\users\keyf\documents\visual studio 2013\Projects\SatanBot\SatanBot\obj\Debug\SatanBot.csprojResolveAssemblyReference.cache
+c:\users\keyf\documents\visual studio 2013\Projects\SatanBot\SatanBot\obj\Debug\SatanBot.Form1.resources
+c:\users\keyf\documents\visual studio 2013\Projects\SatanBot\SatanBot\obj\Debug\SatanBot.Properties.Resources.resources
+c:\users\keyf\documents\visual studio 2013\Projects\SatanBot\SatanBot\obj\Debug\SatanBot.csproj.GenerateResource.Cache
+c:\users\keyf\documents\visual studio 2013\Projects\SatanBot\SatanBot\obj\Debug\SatanBot.exe
+c:\users\keyf\documents\visual studio 2013\Projects\SatanBot\SatanBot\obj\Debug\SatanBot.pdb
