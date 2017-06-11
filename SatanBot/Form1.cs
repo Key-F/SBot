@@ -39,7 +39,8 @@ namespace SatanBot
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Browser.Quit(); // Добавить нормальный выход
+            if (Browser != null) Browser.Quit(); 
+            Application.Exit();
         }
 
         private void button3_Click(object sender, EventArgs e) // Логин
@@ -122,6 +123,36 @@ namespace SatanBot
                {
                    //thread.Resume(); // разобраться в этом говне
                }
+               private void textBox1_MouseClick(object sender, MouseEventArgs e)
+               {
+                   textBox1.Text = string.Empty;
+                   textBox1.ForeColor = Color.Black;       
+               }
+               private void textBox2_MouseClick(object sender, MouseEventArgs e)
+               {
+                   textBox2.Text = string.Empty;
+                   textBox2.ForeColor = Color.Black;
+               }
+               private void OnDefocus1(object sender, EventArgs e)
+               {
+                   if (textBox1.Text == "")
+                   {
+                       textBox1.Text = "Login";
+                       textBox1.ForeColor = Color.Gray;
+                   }
+               }
+               private void OnDefocus2(object sender, EventArgs e)
+               {
+                   if (textBox2.Text == "")
+                   {
+                       textBox2.Text = "Password";
+                       textBox2.ForeColor = Color.Gray;
+                   }
+               }
+
+           
+
+  
 
                
     }

@@ -86,20 +86,26 @@
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox1.ForeColor = System.Drawing.SystemColors.GrayText;
             this.textBox1.Location = new System.Drawing.Point(0, 23);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(242, 20);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Login";
+            this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseClick);
+            this.textBox1.LostFocus += OnDefocus1;
             // 
             // textBox2
             // 
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox2.ForeColor = System.Drawing.SystemColors.GrayText;
             this.textBox2.Location = new System.Drawing.Point(0, 43);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(242, 20);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "Password";
+            this.textBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseClick);
+            this.textBox2.LostFocus += OnDefocus2;
             // 
             // button4
             // 
