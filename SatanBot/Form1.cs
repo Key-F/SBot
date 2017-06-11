@@ -88,7 +88,7 @@ namespace SatanBot
                         {
                             user.Click();
                             goodtry++;
-                            System.Threading.Thread.Sleep(250); // 500 - стабильно, 100 - вообще нет
+                            System.Threading.Thread.Sleep(Convert.ToInt32(textBox8.Text)); // 500 - стабильно, 100 - вообще нет, 250 - иногда проходы в конце
                         }
                         catch
                         {
@@ -101,7 +101,7 @@ namespace SatanBot
                 }
 
                 if (FollowUsers == null) MessageBox.Show("Пользователи закончились");
-                System.Threading.Thread.Sleep(500);
+                System.Threading.Thread.Sleep(Convert.ToInt32(textBox7.Text));
             }       
         }
                 //Next = Browser.FindElement(By.PartialLinkText("/users/?field=rdate&how=asc&p="));
@@ -122,5 +122,7 @@ namespace SatanBot
                {
                    //thread.Resume(); // разобраться в этом говне
                }
+
+               
     }
 }
