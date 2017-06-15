@@ -18,7 +18,8 @@ namespace SatanBot
     {
 
         IWebDriver Browser;
-        Thread thread;
+        Thread Work;
+        Thread Login;
         public delegate void AddMessageDelegate(int good, int bad);
 
         public Form1()
@@ -38,6 +39,12 @@ namespace SatanBot
 
         private void button3_Click(object sender, EventArgs e) // Логин
         {
+            Login = new Thread(goLogin);
+            Login.Start();                  
+        }
+
+        private void goLogin()
+        {
             string login = textBox1.Text;
             string password = textBox2.Text;
             Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
@@ -52,15 +59,13 @@ namespace SatanBot
             IWebElement PassWordField = Browser.FindElement(By.Name("AUTH[auth_pass]"));
             PassWordField.SendKeys(password + OpenQA.Selenium.Keys.Enter);
 
-            IWebElement OkLogin = Browser.FindElement(By.ClassName("submitButton"));
-            OkLogin.Click();
-           
+            //IWebElement OkLogin = Browser.FindElement(By.Name("auth_user"));
+            // OkLogin.Click();
         }
-
         private void button4_Click(object sender, EventArgs e) // Follow
         {
-            thread = new Thread(FollowStart);
-            thread.Start();           
+            Work = new Thread(FollowStart);
+            Work.Start();           
         }
         private void FollowStart()
         {
@@ -97,7 +102,10 @@ namespace SatanBot
         }
         private void button5_Click(object sender, EventArgs e) // Стоп
         {
-            thread.Abort();
+            if (Work != null) 
+            Work.Abort();
+            if (Login != null)
+            Login.Abort();
         }
         public void LogAdd(int good, int bad) // Обновление счетчиков
         {
