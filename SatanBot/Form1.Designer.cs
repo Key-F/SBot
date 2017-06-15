@@ -86,7 +86,6 @@
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Login";
             this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseClick);
-            this.textBox1.LostFocus += OnDefocus1;
             // 
             // textBox2
             // 
@@ -98,7 +97,6 @@
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "Password";
             this.textBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseClick);
-            this.textBox2.LostFocus += OnDefocus2;
             // 
             // button4
             // 

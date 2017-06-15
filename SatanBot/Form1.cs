@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OpenQA.Selenium;
 using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace SatanBot
 {
@@ -19,10 +20,14 @@ namespace SatanBot
         IWebDriver Browser;
         Thread thread;
         public delegate void AddMessageDelegate(int good, int bad);
+
         public Form1()
         {
+            TopMost = true;
             InitializeComponent();
-
+            textBox1.LostFocus += OnDefocus1; // Из Form1.Designer студия удаляет их
+            textBox2.LostFocus += OnDefocus2;
+            textBox2.UseSystemPasswordChar = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -107,6 +112,7 @@ namespace SatanBot
         }
         private void textBox2_MouseClick(object sender, MouseEventArgs e)
         {
+            textBox2.UseSystemPasswordChar = true;
             textBox2.Text = string.Empty;
             textBox2.ForeColor = Color.Black;
         }
@@ -122,10 +128,12 @@ namespace SatanBot
         {
             if (textBox2.Text == "")
             {
+                textBox2.UseSystemPasswordChar = false;
                 textBox2.Text = "Password";
                 textBox2.ForeColor = Color.Gray;
             }
-        }                                                                                              
-               
+        }
+
+        
     }
 }
