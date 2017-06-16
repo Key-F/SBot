@@ -117,11 +117,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 49);
+            this.label1.Location = new System.Drawing.Point(2, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.Size = new System.Drawing.Size(116, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Поледняя страница:";
+            this.label1.Text = "Последняя страница:";
             // 
             // textBox3
             // 
@@ -202,6 +202,7 @@
             this.label4.Size = new System.Drawing.Size(98, 13);
             this.label4.TabIndex = 12;
             this.label4.Text = "Первая страница:";
+         
             // 
             // button5
             // 
