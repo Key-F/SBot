@@ -54,7 +54,7 @@ namespace SatanBot
             SearchLoginButton.Click();
 
             IWebElement LoginField = Browser.FindElement(By.Name("AUTH[auth_login]"));
-            LoginField.SendKeys(login + OpenQA.Selenium.Keys.Enter);
+            LoginField.SendKeys(login);
 
             IWebElement PassWordField = Browser.FindElement(By.Name("AUTH[auth_pass]"));
             PassWordField.SendKeys(password + OpenQA.Selenium.Keys.Enter);
