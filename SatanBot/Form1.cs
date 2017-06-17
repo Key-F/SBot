@@ -142,6 +142,35 @@ namespace SatanBot
             }
         }
 
-     
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Microsoft.Win32.RegistryKey Key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\", true);
+                string ourpath = Application.ExecutablePath;
+                Key.SetValue("SBot", ourpath);
+                Key.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Запустите с правами администратора");
+            }
+        }
+
+        private void otmenaStartaSWindoiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Microsoft.Win32.RegistryKey key =
+             Microsoft.Win32.Registry.LocalMachine.OpenSubKey(
+            "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+                key.DeleteValue("SBot", false);
+                key.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Запустите с правами администратора");
+            }
+        }
     }
 }
