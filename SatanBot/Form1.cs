@@ -68,12 +68,12 @@ namespace SatanBot
                 //PassWordField.SendKeys(password + OpenQA.Selenium.Keys.Enter);
                 if (CheckIfLoggedIn.Text.Contains("Welcome"))
                 {
-                    Invoke(new AddMessage(Say), new object[] { login });                    
+                    Invoke(new AddMessage(Say), new object[] { "Logged in as " + login });                    
                 }
             }
             catch
             {
-                Invoke(new AddMessage(Say), new object[] { "Too Fast" });
+                Invoke(new AddMessage(Say), new object[] { "Error" });
             }
 
         }
@@ -198,7 +198,24 @@ namespace SatanBot
         }
         public void Say(string hey) // Сказать в строке состояний
         {
-            toolStripStatusLabel1.Text = "Logged in as " + hey;
+            toolStripStatusLabel1.Text = hey;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if ((Browser != null) && (toolStripStatusLabel1.Text.Contains("Logged") == true))
+            {
+                Browser.Navigate().GoToUrl("http://myanimeshelf.com/shelf/USERNAME");
+                //IWebElement SendMessage = Browser.FindElement(By.Name("post"));
+                //SendMessage.SendKeys("bot test");
+                //List<IWebElement> Comments = Browser.FindElements(By.CssSelector("div[id ^= 'comments']  b")).ToList();
+                List<IWebElement> Comments = Browser.FindElements(By.CssSelector("b[class = 'user_name']")).ToList(); // vrode rabotaet
+                
+            }
+            else
+                MessageBox.Show("Нужно выполнить вход и не закрывать браузер");
+            
+            
         }
     }
 }

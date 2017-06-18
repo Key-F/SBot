@@ -57,6 +57,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -64,6 +65,7 @@
             this.Login_Tab.SuspendLayout();
             this.Follow_Tab.SuspendLayout();
             this.Options_Tab.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -349,7 +351,7 @@
             this.Follow_Tab.Location = new System.Drawing.Point(4, 22);
             this.Follow_Tab.Name = "Follow_Tab";
             this.Follow_Tab.Padding = new System.Windows.Forms.Padding(3);
-            this.Follow_Tab.Size = new System.Drawing.Size(232, 282);
+            this.Follow_Tab.Size = new System.Drawing.Size(232, 260);
             this.Follow_Tab.TabIndex = 1;
             this.Follow_Tab.Text = "Follow";
             this.Follow_Tab.UseVisualStyleBackColor = true;
@@ -359,19 +361,20 @@
             this.Options_Tab.Controls.Add(this.checkBox1);
             this.Options_Tab.Location = new System.Drawing.Point(4, 22);
             this.Options_Tab.Name = "Options_Tab";
-            this.Options_Tab.Size = new System.Drawing.Size(551, 327);
+            this.Options_Tab.Size = new System.Drawing.Size(232, 260);
             this.Options_Tab.TabIndex = 2;
             this.Options_Tab.Text = "Options";
             this.Options_Tab.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(371, 294);
+            this.tabPage4.Size = new System.Drawing.Size(232, 260);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.Text = "Happy B-Day";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // checkBox1
@@ -401,6 +404,16 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(35, 17);
             this.toolStripStatusLabel1.Text = "Hello";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(64, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 51);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,6 +435,7 @@
             this.Follow_Tab.ResumeLayout(false);
             this.Options_Tab.ResumeLayout(false);
             this.Options_Tab.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -460,6 +474,7 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
