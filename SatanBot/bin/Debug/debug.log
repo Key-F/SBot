@@ -115,3 +115,27 @@
 [0616/014046.834:ERROR:process_reader_win.cc(114)] NtOpenThread: {Отказано в доступе} Процесс запросил доступ к объекту, но права на доступ не предоставлены.  (0xc0000022)
 [0616/014046.834:ERROR:exception_snapshot_win.cc(87)] thread ID 14728 not found in process
 [0616/014046.834:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0619/002957.362:ERROR:process_reader_win.cc(114)] NtOpenThread: {Отказано в доступе} Процесс запросил доступ к объекту, но права на доступ не предоставлены.  (0xc0000022)
+[0619/002957.374:ERROR:exception_snapshot_win.cc(87)] thread ID 16916 not found in process
+[0619/002957.374:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0619/002958.444:ERROR:process_reader_win.cc(114)] NtOpenThread: {Отказано в доступе} Процесс запросил доступ к объекту, но права на доступ не предоставлены.  (0xc0000022)
+[0619/002958.445:ERROR:exception_snapshot_win.cc(87)] thread ID 16944 not found in process
+[0619/002958.445:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0619/002959.416:ERROR:process_reader_win.cc(114)] NtOpenThread: {Отказано в доступе} Процесс запросил доступ к объекту, но права на доступ не предоставлены.  (0xc0000022)
+[0619/002959.417:ERROR:exception_snapshot_win.cc(87)] thread ID 16960 not found in process
+[0619/002959.417:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0619/003000.234:ERROR:process_reader_win.cc(114)] NtOpenThread: {Отказано в доступе} Процесс запросил доступ к объекту, но права на доступ не предоставлены.  (0xc0000022)
+[0619/003000.235:ERROR:exception_snapshot_win.cc(87)] thread ID 16972 not found in process
+[0619/003000.235:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0619/005455.301:ERROR:process_reader_win.cc(114)] NtOpenThread: {Отказано в доступе} Процесс запросил доступ к объекту, но права на доступ не предоставлены.  (0xc0000022)
+[0619/005455.302:ERROR:exception_snapshot_win.cc(87)] thread ID 16140 not found in process
+[0619/005455.302:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0619/005456.290:ERROR:process_reader_win.cc(114)] NtOpenThread: {Отказано в доступе} Процесс запросил доступ к объекту, но права на доступ не предоставлены.  (0xc0000022)
+[0619/005456.291:ERROR:exception_snapshot_win.cc(87)] thread ID 9736 not found in process
+[0619/005456.291:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0619/005457.092:ERROR:process_reader_win.cc(114)] NtOpenThread: {Отказано в доступе} Процесс запросил доступ к объекту, но права на доступ не предоставлены.  (0xc0000022)
+[0619/005457.092:ERROR:exception_snapshot_win.cc(87)] thread ID 13348 not found in process
+[0619/005457.092:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0619/005457.940:ERROR:process_reader_win.cc(114)] NtOpenThread: {Отказано в доступе} Процесс запросил доступ к объекту, но права на доступ не предоставлены.  (0xc0000022)
+[0619/005457.941:ERROR:exception_snapshot_win.cc(87)] thread ID 16804 not found in process
+[0619/005457.941:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed

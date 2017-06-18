@@ -21,17 +21,19 @@ namespace SatanBot
         Thread Work;
         Thread Login;
         public delegate void AddMessageDelegate(int good, int bad);
-
+        public delegate void AddMessage(string hey);
         public Form1()
         {
+            
             TopMost = true;
             InitializeComponent();
             textBox1.LostFocus += OnDefocus1; // Из Form1.Designer студия удаляет их
             textBox2.LostFocus += OnDefocus2;
             textBox2.UseSystemPasswordChar = false;
+            tabControl1.Select();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // Выход
         {
             if (Browser != null) Browser.Quit(); 
             Application.Exit();
@@ -58,9 +60,22 @@ namespace SatanBot
 
             IWebElement PassWordField = Browser.FindElement(By.Name("AUTH[auth_pass]"));
             PassWordField.SendKeys(password + OpenQA.Selenium.Keys.Enter);
+            
+            try
+            {
+                System.Threading.Thread.Sleep(2000); // todo Это вынести как отдельную настройку
+                IWebElement CheckIfLoggedIn = Browser.FindElement(By.ClassName("blankRel"));
+                //PassWordField.SendKeys(password + OpenQA.Selenium.Keys.Enter);
+                if (CheckIfLoggedIn.Text.Contains("Welcome"))
+                {
+                    Invoke(new AddMessage(Say), new object[] { login });                    
+                }
+            }
+            catch
+            {
+                Invoke(new AddMessage(Say), new object[] { "Too Fast" });
+            }
 
-            //IWebElement OkLogin = Browser.FindElement(By.Name("auth_user"));
-            // OkLogin.Click();
         }
         private void button4_Click(object sender, EventArgs e) // Follow
         {
@@ -107,11 +122,8 @@ namespace SatanBot
             if (Login != null)
             Login.Abort();
         }
-        public void LogAdd(int good, int bad) // Обновление счетчиков
-        {
-            textBox4.Text = good.ToString();
-            textBox5.Text = bad.ToString();
-        }
+
+        
 
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -140,37 +152,53 @@ namespace SatanBot
                 textBox2.Text = "Password";
                 textBox2.ForeColor = Color.Gray;
             }
-        }
+        }        
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e) // Запуск с виндой
         {
-            try
+            if (checkBox1.CheckState == CheckState.Checked) // Запускаем
             {
-                Microsoft.Win32.RegistryKey Key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\", true);
-                string ourpath = Application.ExecutablePath;
-                Key.SetValue("SBot", ourpath);
-                Key.Close();
+                try
+                {
+                    Microsoft.Win32.RegistryKey Key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\", true);
+                    string ourpath = Application.ExecutablePath;
+                    Key.SetValue("SBot", ourpath);
+                    Key.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Запустите с правами администратора");
+                    checkBox1.CheckState = CheckState.Unchecked;
+                }
             }
-            catch
-            {
-                MessageBox.Show("Запустите с правами администратора");
-            }
-        }
 
-        private void otmenaStartaSWindoiToolStripMenuItem_Click(object sender, EventArgs e)
+            if (checkBox1.CheckState == CheckState.Unchecked) // Не запускаем
+            {
+                try
+                {
+                    Microsoft.Win32.RegistryKey key =
+                 Microsoft.Win32.Registry.LocalMachine.OpenSubKey(
+                "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+                    key.DeleteValue("SBot", false);
+                    key.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Запустите с правами администратора");
+                    checkBox1.CheckState = CheckState.Checked;
+                }
+            }
+
+        }
+        //for Delegates
+        public void LogAdd(int good, int bad) // Обновление счетчиков
         {
-            try
-            {
-                Microsoft.Win32.RegistryKey key =
-             Microsoft.Win32.Registry.LocalMachine.OpenSubKey(
-            "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-                key.DeleteValue("SBot", false);
-                key.Close();
-            }
-            catch
-            {
-                MessageBox.Show("Запустите с правами администратора");
-            }
+            textBox4.Text = good.ToString();
+            textBox5.Text = bad.ToString();
+        }
+        public void Say(string hey) // Сказать в строке состояний
+        {
+            toolStripStatusLabel1.Text = "Logged in as " + hey;
         }
     }
 }
