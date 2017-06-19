@@ -53,11 +53,14 @@
             this.Login_Tab = new System.Windows.Forms.TabPage();
             this.Follow_Tab = new System.Windows.Forms.TabPage();
             this.Options_Tab = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.BDay_Tab = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.NewGuys_Tab = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -65,8 +68,9 @@
             this.Login_Tab.SuspendLayout();
             this.Follow_Tab.SuspendLayout();
             this.Options_Tab.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.BDay_Tab.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.NewGuys_Tab.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -74,7 +78,7 @@
             this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button2.Location = new System.Drawing.Point(0, 286);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(240, 23);
+            this.button2.Size = new System.Drawing.Size(268, 23);
             this.button2.TabIndex = 2;
             this.button2.Text = "Quit";
             this.button2.UseVisualStyleBackColor = true;
@@ -85,7 +89,7 @@
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.Location = new System.Drawing.Point(3, 43);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(226, 23);
+            this.button3.Size = new System.Drawing.Size(254, 23);
             this.button3.TabIndex = 1;
             this.button3.Text = "MAS Login";
             this.button3.UseVisualStyleBackColor = true;
@@ -97,7 +101,7 @@
             this.textBox1.ForeColor = System.Drawing.SystemColors.GrayText;
             this.textBox1.Location = new System.Drawing.Point(3, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 20);
+            this.textBox1.Size = new System.Drawing.Size(254, 20);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Login";
             this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseClick);
@@ -108,7 +112,7 @@
             this.textBox2.ForeColor = System.Drawing.SystemColors.GrayText;
             this.textBox2.Location = new System.Drawing.Point(3, 23);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(226, 20);
+            this.textBox2.Size = new System.Drawing.Size(254, 20);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "Password";
             this.textBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseClick);
@@ -320,13 +324,14 @@
             // 
             this.tabControl1.Controls.Add(this.Login_Tab);
             this.tabControl1.Controls.Add(this.Follow_Tab);
+            this.tabControl1.Controls.Add(this.NewGuys_Tab);
+            this.tabControl1.Controls.Add(this.BDay_Tab);
             this.tabControl1.Controls.Add(this.Options_Tab);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(240, 286);
+            this.tabControl1.Size = new System.Drawing.Size(268, 286);
             this.tabControl1.TabIndex = 24;
             // 
             // Login_Tab
@@ -337,7 +342,7 @@
             this.Login_Tab.Location = new System.Drawing.Point(4, 22);
             this.Login_Tab.Name = "Login_Tab";
             this.Login_Tab.Padding = new System.Windows.Forms.Padding(3);
-            this.Login_Tab.Size = new System.Drawing.Size(232, 260);
+            this.Login_Tab.Size = new System.Drawing.Size(260, 260);
             this.Login_Tab.TabIndex = 0;
             this.Login_Tab.Text = "Login";
             this.Login_Tab.UseVisualStyleBackColor = true;
@@ -366,17 +371,6 @@
             this.Options_Tab.Text = "Options";
             this.Options_Tab.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.button1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(232, 260);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Happy B-Day";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -388,21 +382,17 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // statusStrip1
+            // BDay_Tab
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 309);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(240, 22);
-            this.statusStrip1.TabIndex = 25;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(35, 17);
-            this.toolStripStatusLabel1.Text = "Hello";
+            this.BDay_Tab.Controls.Add(this.button6);
+            this.BDay_Tab.Controls.Add(this.button1);
+            this.BDay_Tab.Location = new System.Drawing.Point(4, 22);
+            this.BDay_Tab.Name = "BDay_Tab";
+            this.BDay_Tab.Padding = new System.Windows.Forms.Padding(3);
+            this.BDay_Tab.Size = new System.Drawing.Size(260, 260);
+            this.BDay_Tab.TabIndex = 3;
+            this.BDay_Tab.Text = "Happy B-Day";
+            this.BDay_Tab.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -414,11 +404,58 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 309);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(268, 22);
+            this.statusStrip1.TabIndex = 25;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(35, 17);
+            this.toolStripStatusLabel1.Text = "Hello";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(64, 107);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(91, 23);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "finder";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // NewGuys_Tab
+            // 
+            this.NewGuys_Tab.Controls.Add(this.button7);
+            this.NewGuys_Tab.Location = new System.Drawing.Point(4, 22);
+            this.NewGuys_Tab.Name = "NewGuys_Tab";
+            this.NewGuys_Tab.Padding = new System.Windows.Forms.Padding(3);
+            this.NewGuys_Tab.Size = new System.Drawing.Size(260, 260);
+            this.NewGuys_Tab.TabIndex = 4;
+            this.NewGuys_Tab.Text = "NewGuys";
+            this.NewGuys_Tab.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(63, 44);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(91, 23);
+            this.button7.TabIndex = 2;
+            this.button7.Text = "finder";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 331);
+            this.ClientSize = new System.Drawing.Size(268, 331);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.statusStrip1);
@@ -435,9 +472,10 @@
             this.Follow_Tab.ResumeLayout(false);
             this.Options_Tab.ResumeLayout(false);
             this.Options_Tab.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
+            this.BDay_Tab.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.NewGuys_Tab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,10 +509,13 @@
         private System.Windows.Forms.TabPage Follow_Tab;
         private System.Windows.Forms.TabPage Options_Tab;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage BDay_Tab;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TabPage NewGuys_Tab;
+        private System.Windows.Forms.Button button7;
     }
 }
 
