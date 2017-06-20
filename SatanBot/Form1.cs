@@ -156,40 +156,8 @@ namespace SatanBot
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e) // Запуск с виндой
         {
-            if (checkBox1.CheckState == CheckState.Checked) // Запускаем
-            {
-                try
-                {
-                    Microsoft.Win32.RegistryKey Key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\", true);
-                    string ourpath = Application.ExecutablePath;
-                    Key.SetValue("SBot", ourpath);
-                    Key.Close();
-                }
-                catch
-                {
-                    MessageBox.Show("Запустите с правами администратора");
-                    checkBox1.CheckState = CheckState.Unchecked;
-                    
-                }
-            }
-
-            if (checkBox1.CheckState == CheckState.Unchecked) // Не запускаем
-            {
-                try
-                {
-                    Microsoft.Win32.RegistryKey key =
-                 Microsoft.Win32.Registry.LocalMachine.OpenSubKey(
-                "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-                    key.DeleteValue("SBot", false);
-                    key.Close();
-                }
-                catch
-                {
-                    MessageBox.Show("Запустите с правами администратора");
-                    checkBox1.CheckState = CheckState.Checked;
-                   
-                }
-            }
+            
+            
 
         }
         //for Delegates
@@ -217,9 +185,43 @@ namespace SatanBot
 
         }
 
-        
-            
+        private void checkBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (checkBox1.CheckState == CheckState.Checked) // Запускаем
+            {
+                try
+                {
+                    Microsoft.Win32.RegistryKey Key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\", true);
+                    string ourpath = Application.ExecutablePath;
+                    Key.SetValue("SBot", ourpath);
+                    Key.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Запустите с правами администратора");
+                    checkBox1.CheckState = CheckState.Unchecked;
+                    return;
 
-        
+                }
+            }
+
+            if (checkBox1.CheckState == CheckState.Unchecked) // Не запускаем
+            {
+                try
+                {
+                    Microsoft.Win32.RegistryKey key =
+                 Microsoft.Win32.Registry.LocalMachine.OpenSubKey(
+                "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+                    key.DeleteValue("SBot", false);
+                    key.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Запустите с правами администратора");
+                    checkBox1.CheckState = CheckState.Checked;
+                    return;
+                }
+            }
+        }
     }
 }

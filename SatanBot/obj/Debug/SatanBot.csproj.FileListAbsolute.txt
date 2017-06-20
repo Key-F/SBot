@@ -20,3 +20,14 @@ D:\SBot-master\SatanBot\obj\Debug\SatanBot.csprojResolveAssemblyReference.cache
 D:\SBot-master\SatanBot\obj\Debug\SatanBot.Form1.resources
 D:\SBot-master\SatanBot\obj\Debug\SatanBot.Properties.Resources.resources
 D:\SBot-master\SatanBot\obj\Debug\SatanBot.csproj.GenerateResource.Cache
+C:\Users\keyf\Documents\GitHub\SBot\SatanBot\bin\Debug\SatanBot.exe.config
+C:\Users\keyf\Documents\GitHub\SBot\SatanBot\bin\Debug\SatanBot.exe
+C:\Users\keyf\Documents\GitHub\SBot\SatanBot\bin\Debug\SatanBot.pdb
+C:\Users\keyf\Documents\GitHub\SBot\SatanBot\bin\Debug\WebDriver.dll
+C:\Users\keyf\Documents\GitHub\SBot\SatanBot\bin\Debug\WebDriver.xml
+C:\Users\keyf\Documents\GitHub\SBot\SatanBot\obj\Debug\SatanBot.csprojResolveAssemblyReference.cache
+C:\Users\keyf\Documents\GitHub\SBot\SatanBot\obj\Debug\SatanBot.Form1.resources
+C:\Users\keyf\Documents\GitHub\SBot\SatanBot\obj\Debug\SatanBot.Properties.Resources.resources
+C:\Users\keyf\Documents\GitHub\SBot\SatanBot\obj\Debug\SatanBot.csproj.GenerateResource.Cache
+C:\Users\keyf\Documents\GitHub\SBot\SatanBot\obj\Debug\SatanBot.exe
+C:\Users\keyf\Documents\GitHub\SBot\SatanBot\obj\Debug\SatanBot.pdb
