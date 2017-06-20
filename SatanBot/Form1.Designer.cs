@@ -52,25 +52,25 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Login_Tab = new System.Windows.Forms.TabPage();
             this.Follow_Tab = new System.Windows.Forms.TabPage();
-            this.Options_Tab = new System.Windows.Forms.TabPage();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.BDay_Tab = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button6 = new System.Windows.Forms.Button();
             this.NewGuys_Tab = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
+            this.BDay_Tab = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Options_Tab = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Login_Tab.SuspendLayout();
             this.Follow_Tab.SuspendLayout();
-            this.Options_Tab.SuspendLayout();
-            this.BDay_Tab.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.NewGuys_Tab.SuspendLayout();
+            this.BDay_Tab.SuspendLayout();
+            this.Options_Tab.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -122,7 +122,7 @@
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.Location = new System.Drawing.Point(3, 213);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(226, 35);
+            this.button4.Size = new System.Drawing.Size(254, 35);
             this.button4.TabIndex = 5;
             this.button4.Text = "Follow";
             this.button4.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox3.Location = new System.Drawing.Point(125, 44);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(27, 20);
+            this.textBox3.Size = new System.Drawing.Size(55, 20);
             this.textBox3.TabIndex = 7;
             this.textBox3.Text = "285";
             // 
@@ -158,7 +158,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.Location = new System.Drawing.Point(158, 16);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(35, 20);
+            this.textBox4.Size = new System.Drawing.Size(63, 20);
             this.textBox4.TabIndex = 9;
             this.textBox4.Text = "0";
             // 
@@ -181,7 +181,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox5.Location = new System.Drawing.Point(158, 38);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(35, 20);
+            this.textBox5.Size = new System.Drawing.Size(63, 20);
             this.textBox5.TabIndex = 11;
             this.textBox5.Text = "0";
             // 
@@ -204,7 +204,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox6.Location = new System.Drawing.Point(125, 17);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(27, 20);
+            this.textBox6.Size = new System.Drawing.Size(55, 20);
             this.textBox6.TabIndex = 13;
             this.textBox6.Text = "1";
             // 
@@ -223,7 +223,7 @@
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(163, 17);
+            this.button5.Location = new System.Drawing.Point(191, 17);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(63, 47);
             this.button5.TabIndex = 14;
@@ -238,7 +238,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox7.Location = new System.Drawing.Point(147, 42);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(22, 20);
+            this.textBox7.Size = new System.Drawing.Size(50, 20);
             this.textBox7.TabIndex = 19;
             this.textBox7.Text = "500";
             // 
@@ -261,7 +261,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox8.Location = new System.Drawing.Point(147, 16);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(22, 20);
+            this.textBox8.Size = new System.Drawing.Size(50, 20);
             this.textBox8.TabIndex = 17;
             this.textBox8.Text = "265";
             // 
@@ -286,7 +286,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(3, 143);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(226, 70);
+            this.groupBox1.Size = new System.Drawing.Size(254, 70);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Интервалы времени";
@@ -300,7 +300,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(3, 73);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(226, 70);
+            this.groupBox2.Size = new System.Drawing.Size(254, 70);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Результат";
@@ -315,7 +315,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(226, 70);
+            this.groupBox3.Size = new System.Drawing.Size(254, 70);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Начальные условия";
@@ -356,79 +356,10 @@
             this.Follow_Tab.Location = new System.Drawing.Point(4, 22);
             this.Follow_Tab.Name = "Follow_Tab";
             this.Follow_Tab.Padding = new System.Windows.Forms.Padding(3);
-            this.Follow_Tab.Size = new System.Drawing.Size(232, 260);
+            this.Follow_Tab.Size = new System.Drawing.Size(260, 260);
             this.Follow_Tab.TabIndex = 1;
             this.Follow_Tab.Text = "Follow";
             this.Follow_Tab.UseVisualStyleBackColor = true;
-            // 
-            // Options_Tab
-            // 
-            this.Options_Tab.Controls.Add(this.checkBox1);
-            this.Options_Tab.Location = new System.Drawing.Point(4, 22);
-            this.Options_Tab.Name = "Options_Tab";
-            this.Options_Tab.Size = new System.Drawing.Size(232, 260);
-            this.Options_Tab.TabIndex = 2;
-            this.Options_Tab.Text = "Options";
-            this.Options_Tab.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(21, 25);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(117, 17);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Start with Windows";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // BDay_Tab
-            // 
-            this.BDay_Tab.Controls.Add(this.button6);
-            this.BDay_Tab.Controls.Add(this.button1);
-            this.BDay_Tab.Location = new System.Drawing.Point(4, 22);
-            this.BDay_Tab.Name = "BDay_Tab";
-            this.BDay_Tab.Padding = new System.Windows.Forms.Padding(3);
-            this.BDay_Tab.Size = new System.Drawing.Size(260, 260);
-            this.BDay_Tab.TabIndex = 3;
-            this.BDay_Tab.Text = "Happy B-Day";
-            this.BDay_Tab.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(64, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 51);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "test";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 309);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(268, 22);
-            this.statusStrip1.TabIndex = 25;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(35, 17);
-            this.toolStripStatusLabel1.Text = "Hello";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(64, 107);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(91, 23);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "finder";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // NewGuys_Tab
             // 
@@ -451,6 +382,75 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // BDay_Tab
+            // 
+            this.BDay_Tab.Controls.Add(this.button6);
+            this.BDay_Tab.Controls.Add(this.button1);
+            this.BDay_Tab.Location = new System.Drawing.Point(4, 22);
+            this.BDay_Tab.Name = "BDay_Tab";
+            this.BDay_Tab.Padding = new System.Windows.Forms.Padding(3);
+            this.BDay_Tab.Size = new System.Drawing.Size(260, 260);
+            this.BDay_Tab.TabIndex = 3;
+            this.BDay_Tab.Text = "Happy B-Day";
+            this.BDay_Tab.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(64, 107);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(91, 23);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "finder";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(64, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 51);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Options_Tab
+            // 
+            this.Options_Tab.Controls.Add(this.checkBox1);
+            this.Options_Tab.Location = new System.Drawing.Point(4, 22);
+            this.Options_Tab.Name = "Options_Tab";
+            this.Options_Tab.Size = new System.Drawing.Size(260, 260);
+            this.Options_Tab.TabIndex = 2;
+            this.Options_Tab.Text = "Options";
+            this.Options_Tab.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(21, 25);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(117, 17);
+            this.checkBox1.TabIndex = 1;
+            this.checkBox1.Text = "Start with Windows";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseClick_1);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 309);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(268, 22);
+            this.statusStrip1.TabIndex = 25;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(35, 17);
+            this.toolStripStatusLabel1.Text = "Hello";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,12 +470,12 @@
             this.Login_Tab.ResumeLayout(false);
             this.Login_Tab.PerformLayout();
             this.Follow_Tab.ResumeLayout(false);
+            this.NewGuys_Tab.ResumeLayout(false);
+            this.BDay_Tab.ResumeLayout(false);
             this.Options_Tab.ResumeLayout(false);
             this.Options_Tab.PerformLayout();
-            this.BDay_Tab.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.NewGuys_Tab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

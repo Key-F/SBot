@@ -154,12 +154,7 @@ namespace SatanBot
             }
         }        
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e) // Запуск с виндой
-        {
-            
-            
-
-        }
+      
         //for Delegates
         public void LogAdd(int good, int bad) // Обновление счетчиков
         {
@@ -185,7 +180,7 @@ namespace SatanBot
 
         }
 
-        private void checkBox1_MouseClick(object sender, MouseEventArgs e)
+        private void checkBox1_MouseClick_1(object sender, MouseEventArgs e) // Запуск с Windows
         {
             if (checkBox1.CheckState == CheckState.Checked) // Запускаем
             {
@@ -223,5 +218,7 @@ namespace SatanBot
                 }
             }
         }
+
+       
     }
 }
