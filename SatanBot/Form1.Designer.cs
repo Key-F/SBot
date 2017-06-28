@@ -53,6 +53,7 @@
             this.Login_Tab = new System.Windows.Forms.TabPage();
             this.Follow_Tab = new System.Windows.Forms.TabPage();
             this.NewGuys_Tab = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.BDay_Tab = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
@@ -363,6 +364,7 @@
             // 
             // NewGuys_Tab
             // 
+            this.NewGuys_Tab.Controls.Add(this.button8);
             this.NewGuys_Tab.Controls.Add(this.button7);
             this.NewGuys_Tab.Location = new System.Drawing.Point(4, 22);
             this.NewGuys_Tab.Name = "NewGuys_Tab";
@@ -372,13 +374,25 @@
             this.NewGuys_Tab.Text = "NewGuys";
             this.NewGuys_Tab.UseVisualStyleBackColor = true;
             // 
+            // button8
+            // 
+            this.button8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button8.Location = new System.Drawing.Point(3, 219);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(254, 38);
+            this.button8.TabIndex = 15;
+            this.button8.Text = "Stop";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(63, 44);
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.Location = new System.Drawing.Point(3, 3);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(91, 23);
+            this.button7.Size = new System.Drawing.Size(254, 39);
             this.button7.TabIndex = 2;
-            this.button7.Text = "finder";
+            this.button7.Text = "Finder";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -516,6 +530,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TabPage NewGuys_Tab;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }
 

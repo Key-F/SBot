@@ -20,6 +20,7 @@ namespace SatanBot
         IWebDriver Browser;
         Thread Work;
         Thread Login;
+        string login;
         public delegate void AddMessageDelegate(int good, int bad);
         public delegate void AddMessage(string hey);
         public Form1()
@@ -47,7 +48,7 @@ namespace SatanBot
 
         private void goLogin()
         {
-            string login = textBox1.Text;
+            login = textBox1.Text;
             string password = textBox2.Text;
             Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
             Browser.Manage().Window.Maximize();
@@ -219,6 +220,6 @@ namespace SatanBot
             }
         }
 
-       
+        
     }
 }
