@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -62,6 +63,10 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -364,6 +369,9 @@
             // 
             // NewGuys_Tab
             // 
+            this.NewGuys_Tab.Controls.Add(this.textBox9);
+            this.NewGuys_Tab.Controls.Add(this.label7);
+            this.NewGuys_Tab.Controls.Add(this.checkBox2);
             this.NewGuys_Tab.Controls.Add(this.button8);
             this.NewGuys_Tab.Controls.Add(this.button7);
             this.NewGuys_Tab.Location = new System.Drawing.Point(4, 22);
@@ -465,6 +473,38 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(35, 17);
             this.toolStripStatusLabel1.Text = "Hello";
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(8, 48);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(61, 17);
+            this.checkBox2.TabIndex = 16;
+            this.checkBox2.Text = "Repeat";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(34, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(33, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "delta:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(73, 65);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(87, 20);
+            this.textBox9.TabIndex = 18;
+            this.textBox9.Text = "1800000";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1800000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -485,6 +525,7 @@
             this.Login_Tab.PerformLayout();
             this.Follow_Tab.ResumeLayout(false);
             this.NewGuys_Tab.ResumeLayout(false);
+            this.NewGuys_Tab.PerformLayout();
             this.BDay_Tab.ResumeLayout(false);
             this.Options_Tab.ResumeLayout(false);
             this.Options_Tab.PerformLayout();
@@ -531,6 +572,10 @@
         private System.Windows.Forms.TabPage NewGuys_Tab;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

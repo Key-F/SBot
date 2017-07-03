@@ -43,6 +43,7 @@ namespace SatanBot
         private void button3_Click(object sender, EventArgs e) // Логин
         {
             Login = new Thread(goLogin);
+            Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
             Login.Start();                  
         }
 
@@ -50,8 +51,8 @@ namespace SatanBot
         {
             login = textBox1.Text;
             string password = textBox2.Text;
-            Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
-            Browser.Manage().Window.Maximize();
+            //Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
+            //Browser.Manage().Window.Maximize();
             Browser.Navigate().GoToUrl("https://myanimeshelf.com/users/");
             IWebElement SearchLoginButton = Browser.FindElement(By.ClassName("logInButt"));
             SearchLoginButton.Click();
@@ -220,6 +221,7 @@ namespace SatanBot
             }
         }
 
-        
+      
+      
     }
 }

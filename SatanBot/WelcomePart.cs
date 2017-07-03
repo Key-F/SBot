@@ -58,6 +58,7 @@ namespace SatanBot
         {
             if (Welcome != null)
                 Welcome.Abort();
+            timer1.Enabled = false;
         }
 
         private void FindGuys()
@@ -97,7 +98,7 @@ namespace SatanBot
                         {
                             MessageBox.Show("Ya tut");
                             yatut = true;
-                            // return;
+                            return;
                             break;
                         }
                         else yatut = false;
@@ -129,8 +130,35 @@ namespace SatanBot
         }
         private void button7_Click(object sender, EventArgs e) // Finder 
         {
-            Welcome = new Thread(FindGuys);
-            Welcome.Start();            
+            if (checkBox2.CheckState == CheckState.Unchecked)
+            {
+                Welcome = new Thread(FindGuys);
+                Welcome.Start();
+            }
+            else
+            {
+                timer1.Interval = Convert.ToInt32(textBox9.Text);
+                timer1.Enabled = true;
+
+                Welcome = new Thread(FindGuys); // Тут, чтобы первый раз прошло
+                Welcome.Start();
+            }
+            
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+                IWebElement CheckForLogin = Browser.FindElement(By.CssSelector("div [class = 'blankRel tar'] nobr"));
+                if (!CheckForLogin.Text.Contains(login))
+                {
+                    goLogin();
+                }
+                Welcome = new Thread(FindGuys);
+                Welcome.Start();
+            
+           
+               // goLogin(); // Когда ошибка -> перелогиниваемся
+             
         }
 
         private void postCreate(string name)
@@ -146,7 +174,7 @@ namespace SatanBot
             MessageBox.Show("");
             IWebElement SearchPostButton = Browser.FindElement(By.ClassName("commentSubmit"));
             SearchPostButton.Click();
-            Thread.Sleep(5000); // Немножк
+            Thread.Sleep(500); // Немножк
             try
             {
                 IWebElement DaButton = Browser.FindElement(By.ClassName("approve"));
