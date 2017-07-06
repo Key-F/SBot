@@ -54,6 +54,9 @@
             this.Login_Tab = new System.Windows.Forms.TabPage();
             this.Follow_Tab = new System.Windows.Forms.TabPage();
             this.NewGuys_Tab = new System.Windows.Forms.TabPage();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.BDay_Tab = new System.Windows.Forms.TabPage();
@@ -63,9 +66,6 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -110,7 +110,7 @@
             this.textBox1.Size = new System.Drawing.Size(254, 20);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Login";
-            this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseClick);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // textBox2
             // 
@@ -121,7 +121,7 @@
             this.textBox2.Size = new System.Drawing.Size(254, 20);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "Password";
-            this.textBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseClick);
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // button4
             // 
@@ -382,6 +382,33 @@
             this.NewGuys_Tab.Text = "NewGuys";
             this.NewGuys_Tab.UseVisualStyleBackColor = true;
             // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(73, 65);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(87, 20);
+            this.textBox9.TabIndex = 18;
+            this.textBox9.Text = "1800000";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(34, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(33, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "delta:";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(8, 48);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(61, 17);
+            this.checkBox2.TabIndex = 16;
+            this.checkBox2.Text = "Repeat";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // button8
             // 
             this.button8.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -472,33 +499,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(35, 17);
             this.toolStripStatusLabel1.Text = "Hello";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(8, 48);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(61, 17);
-            this.checkBox2.TabIndex = 16;
-            this.checkBox2.Text = "Repeat";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(34, 68);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "delta:";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(73, 65);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(87, 20);
-            this.textBox9.TabIndex = 18;
-            this.textBox9.Text = "1800000";
             // 
             // timer1
             // 

@@ -30,6 +30,8 @@ namespace SatanBot
             InitializeComponent();
             textBox1.LostFocus += OnDefocus1; // Из Form1.Designer студия удаляет их
             textBox2.LostFocus += OnDefocus2;
+            textBox1.GotFocus += Onfocus1; // Из Form1.Designer студия удаляет их
+            textBox2.GotFocus += Onfocus2;
             textBox2.UseSystemPasswordChar = false;
             tabControl1.Select();
         }
@@ -127,16 +129,22 @@ namespace SatanBot
 
         
 
-        private void textBox1_MouseClick(object sender, MouseEventArgs e)
+        private void Onfocus1(object sender, EventArgs e)
         {
-            textBox1.Text = string.Empty;
-            textBox1.ForeColor = Color.Black;
+            if (textBox1.Text == "Login")
+            {
+                textBox1.Text = string.Empty;
+                textBox1.ForeColor = Color.Black;
+            }
         }
-        private void textBox2_MouseClick(object sender, MouseEventArgs e)
+        private void Onfocus2(object sender, EventArgs e)
         {
-            textBox2.UseSystemPasswordChar = true;
-            textBox2.Text = string.Empty;
-            textBox2.ForeColor = Color.Black;
+            if (textBox2.Text == "Password")
+            {
+                textBox2.UseSystemPasswordChar = true;
+                textBox2.Text = string.Empty;
+                textBox2.ForeColor = Color.Black;
+            }
         }
         private void OnDefocus1(object sender, EventArgs e)
         {
@@ -221,7 +229,20 @@ namespace SatanBot
             }
         }
 
-      
-      
+        private void textBox1_KeyDown(object sender, KeyEventArgs e) // Жмем enter в первом textbox'e
+        {
+            if (e.KeyCode == System.Windows.Forms.Keys.Enter)
+            {
+                textBox2.Focus();
+            }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e) // Жмем enter во втором textbox'e
+        {
+            if (e.KeyCode == System.Windows.Forms.Keys.Enter)
+            {
+                button3_Click(sender, e); 
+            }
+        }
     }
 }
