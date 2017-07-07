@@ -67,6 +67,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -465,6 +466,7 @@
             // 
             // Options_Tab
             // 
+            this.Options_Tab.Controls.Add(this.checkBox3);
             this.Options_Tab.Controls.Add(this.checkBox1);
             this.Options_Tab.Location = new System.Drawing.Point(4, 22);
             this.Options_Tab.Name = "Options_Tab";
@@ -504,6 +506,16 @@
             // 
             this.timer1.Interval = 1800000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(21, 48);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(99, 17);
+            this.checkBox3.TabIndex = 2;
+            this.checkBox3.Text = "Enable console";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -576,6 +588,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }
 

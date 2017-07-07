@@ -45,7 +45,18 @@ namespace SatanBot
         private void button3_Click(object sender, EventArgs e) // Логин
         {
             Login = new Thread(goLogin);
-            Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
+            if (Browser == null)
+            {
+                if (checkBox3.CheckState == CheckState.Unchecked) // Без консоли запуск
+                {
+                    var Chromeservice = OpenQA.Selenium.Chrome.ChromeDriverService.CreateDefaultService();
+                    Chromeservice.HideCommandPromptWindow = true;
+                    Browser = new OpenQA.Selenium.Chrome.ChromeDriver(Chromeservice, new OpenQA.Selenium.Chrome.ChromeOptions());
+                }
+                else
+                    Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
+            }
+
             Login.Start();                  
         }
 
