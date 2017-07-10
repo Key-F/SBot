@@ -82,9 +82,9 @@ namespace SatanBot
                 bool fsb = false; // fsb, vk, tw
                 Browser.Navigate().GoToUrl("http://myanimeshelf.com/shelf/" + NewGuyNames[i]);
                 List<IWebElement> Comments = Browser.FindElements(By.CssSelector("b[class = 'user_name']")).ToList(); // vrode rabotaet
-                if ((NewGuyNames[i].StartsWith("id") || (NewGuyNames[i].StartsWith("tw_")) || (NewGuyNames[i].StartsWith("fb_")) || (NewGuyNames[i].StartsWith("vk_"))))
+                if ((NewGuyNames[i].StartsWith("id")) || (NewGuyNames[i].StartsWith("tw_")) || (NewGuyNames[i].StartsWith("fb_")) || (NewGuyNames[i].StartsWith("vk_")) || (NewGuyNames[i].StartsWith("gp_")))
                 {
-                    MessageBox.Show("eto fsb");
+                    //MessageBox.Show("eto fsb");
                     fsb = true;
                 }
 
@@ -96,7 +96,7 @@ namespace SatanBot
                     {
                         if (Comments[j].Text.ToLower() == login.ToLower()) // ToLower чтобы не учитывать регистр, нужно проверить работает ли без него
                         {
-                            MessageBox.Show("Ya tut");
+                            //MessageBox.Show("Ya tut");
                             yatut = true;
                             return;
                             break;
@@ -113,7 +113,7 @@ namespace SatanBot
                 if (yatut == false)
                 {
 
-                    MessageBox.Show("Menya net");
+                    //MessageBox.Show("Menya net");
                     
                     if (!fsb)
                     {
@@ -147,18 +147,18 @@ namespace SatanBot
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
-                IWebElement CheckForLogin = Browser.FindElement(By.CssSelector("div [class = 'blankRel tar'] nobr"));
-                if (!CheckForLogin.Text.Contains(login))
-                {
-                    goLogin();
-                }
-                Welcome = new Thread(FindGuys);
-                Welcome.Start();
-            
-           
-               // goLogin(); // Когда ошибка -> перелогиниваемся
-             
+            IWebElement CheckForLogin = Browser.FindElement(By.CssSelector("div [class = 'blankRel tar'] nobr"));
+            string checker = CheckForLogin.Text.ToLower();
+            bool tempYes = checker.Contains(login.ToLower());
+            if (!tempYes)
+            {
+                goLogin();
+            }
+            Welcome = new Thread(FindGuys);
+            Welcome.Start();
+
+
+            // goLogin(); // Когда ошибка -> перелогиниваемся
         }
 
         private void postCreate(string name)
@@ -171,7 +171,7 @@ namespace SatanBot
             SendMessage.SendKeys(OpenQA.Selenium.Keys.Enter);
             SendMessage.SendKeys(OpenQA.Selenium.Keys.Enter);
             SendMessage.SendKeys("[MYPHOTO=1104636]");
-            MessageBox.Show("");
+            //MessageBox.Show("");
             IWebElement SearchPostButton = Browser.FindElement(By.ClassName("commentSubmit"));
             SearchPostButton.Click();
             Thread.Sleep(500); // Немножк

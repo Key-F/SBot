@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using OpenQA.Selenium;
 using System.Threading;
 using System.Runtime.InteropServices;
+using System.Xml;
+using System.IO;
 
 namespace SatanBot
 {
@@ -55,8 +57,8 @@ namespace SatanBot
                 }
                 else
                     Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
-            }
-
+            }                      
+            
             Login.Start();                  
         }
 
@@ -67,8 +69,16 @@ namespace SatanBot
             //Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
             //Browser.Manage().Window.Maximize();
             Browser.Navigate().GoToUrl("https://myanimeshelf.com/users/");
-            IWebElement SearchLoginButton = Browser.FindElement(By.ClassName("logInButt"));
-            SearchLoginButton.Click();
+            try
+            {
+                IWebElement SearchLoginButton = Browser.FindElement(By.ClassName("logInButt"));
+                SearchLoginButton.Click();
+            }
+            catch
+            {
+                MessageBox.Show("Already logged in");
+                return;
+            }
 
             IWebElement LoginField = Browser.FindElement(By.Name("AUTH[auth_login]"));
             LoginField.SendKeys(login);
@@ -254,6 +264,15 @@ namespace SatanBot
             {
                 button3_Click(sender, e); 
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData); // 		path	"C:\\Users\\keyf\\AppData\\Roaming"	string
+
+            if (!File.Exists(path + "\\settings.xml"))
+                File.Create(path + "\\settings.xml");
+            
         }
     }
 }
