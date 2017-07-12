@@ -130,6 +130,15 @@ namespace SatanBot
         }
         private void button7_Click(object sender, EventArgs e) // Finder 
         {
+            try
+            {
+                IWebElement CheckForLogin = Browser.FindElement(By.CssSelector("div [class = 'blankRel tar'] nobr"));
+                string checker = CheckForLogin.Text.ToLower();
+            }
+            catch
+            {
+                goLogin();
+            }
             if (checkBox2.CheckState == CheckState.Unchecked)
             {
                 Welcome = new Thread(FindGuys);
@@ -147,13 +156,27 @@ namespace SatanBot
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            IWebElement CheckForLogin = Browser.FindElement(By.CssSelector("div [class = 'blankRel tar'] nobr"));
-            string checker = CheckForLogin.Text.ToLower();
-            bool tempYes = checker.Contains(login.ToLower());
+            try
+            {
+
+                IWebElement CheckForLogin = Browser.FindElement(By.CssSelector("div [class = 'blankRel tar'] nobr"));
+                string checker = CheckForLogin.Text.ToLower();
+                if (checker == null)
+                    goLogin();
+            }
+            catch
+            {
+                goLogin();
+            }
+            
+            //string checker = CheckForLogin.Text.ToLower();
+            //bool tempYes = checker.Contains(login.ToLower());
+            /*
             if (!tempYes)
             {
                 goLogin();
             }
+            */
             Welcome = new Thread(FindGuys);
             Welcome.Start();
 

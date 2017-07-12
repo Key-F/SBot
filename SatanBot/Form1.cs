@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OpenQA.Selenium;
 using System.Threading;
+using System.Text;
 using System.Runtime.InteropServices;
 using System.Xml;
 using System.IO;
@@ -46,6 +47,11 @@ namespace SatanBot
 
         private void button3_Click(object sender, EventArgs e) // Логин
         {
+            if (checkBox4.CheckState == CheckState.Checked) // Сохраняем настройки
+            {
+                Properties.Settings.Default.login = textBox1.Text;
+                Properties.Settings.Default.password = textBox2.Text;
+            }
             Login = new Thread(goLogin);
             if (Browser == null)
             {
@@ -268,11 +274,28 @@ namespace SatanBot
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData); // 		path	"C:\\Users\\keyf\\AppData\\Roaming"	string
+            checkBox4.Checked = Properties.Settings.Default.autologin;
+            if (checkBox4.CheckState == CheckState.Checked)
+            {
+                Onfocus1(sender, e);
+                Onfocus2(sender, e);
+                textBox1.Text = Properties.Settings.Default.login;
+                textBox2.Text = Properties.Settings.Default.password;
+            }
+            //string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData); // 		path	"C:\\Users\\keyf\\AppData\\Roaming"	string
 
-            if (!File.Exists(path + "\\settings.xml"))
-                File.Create(path + "\\settings.xml");
-            
+            // if (!File.Exists(path + "\\settings.xml"))
+            // File.Create(path + "\\settings.xml");
+            //XmlTextWriter xW = new XmlTextWriter(path + "\\settings.xml");
+
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.autologin = checkBox4.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+       
     }
 }

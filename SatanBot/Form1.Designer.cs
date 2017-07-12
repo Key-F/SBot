@@ -63,6 +63,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Options_Tab = new System.Windows.Forms.TabPage();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -466,6 +467,7 @@
             // 
             // Options_Tab
             // 
+            this.Options_Tab.Controls.Add(this.checkBox4);
             this.Options_Tab.Controls.Add(this.checkBox3);
             this.Options_Tab.Controls.Add(this.checkBox1);
             this.Options_Tab.Location = new System.Drawing.Point(4, 22);
@@ -474,6 +476,16 @@
             this.Options_Tab.TabIndex = 2;
             this.Options_Tab.Text = "Options";
             this.Options_Tab.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(21, 71);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(103, 17);
+            this.checkBox4.TabIndex = 3;
+            this.checkBox4.Text = "Save login/pass";
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // checkBox3
             // 
@@ -526,6 +538,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.statusStrip1);
             this.Name = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);            
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -590,6 +603,7 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
     }
 }
 
