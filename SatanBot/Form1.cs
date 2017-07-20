@@ -49,8 +49,8 @@ namespace SatanBot
         {
             if (checkBox4.CheckState == CheckState.Checked) // Сохраняем настройки
             {
-                Properties.Settings.Default.login = textBox1.Text;
-                Properties.Settings.Default.password = textBox2.Text;
+                Properties.Settings.Default.login = (textBox1.Text);
+                Properties.Settings.Default.password = (textBox2.Text);
             }
             Login = new Thread(goLogin);
             if (Browser == null)
@@ -74,7 +74,10 @@ namespace SatanBot
             string password = textBox2.Text;
             //Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
             //Browser.Manage().Window.Maximize();
+            
             Browser.Navigate().GoToUrl("https://myanimeshelf.com/users/");
+                        
+            
             try
             {
                 IWebElement SearchLoginButton = Browser.FindElement(By.ClassName("logInButt"));
@@ -145,6 +148,7 @@ namespace SatanBot
                     System.Threading.Thread.Sleep(Convert.ToInt32(textBox7.Text));
                 }
             }
+            else MessageBox.Show("Log in first");
         }
         private void button5_Click(object sender, EventArgs e) // Стоп
         {
@@ -204,18 +208,7 @@ namespace SatanBot
         }
 
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            if (Browser == null)
-            {
-                Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
-                Browser.Navigate().GoToUrl("http://myanimeshelf.com/");
-                List<IWebElement> BDay = Browser.FindElements(By.CssSelector(".content td:nth-last-child(1) a")).ToList(); // B-days
-                //List<IWebElement> NewGuys = Browser.FindElements(By.CssSelector(".content td:nth-last-child(3) a")).ToList(); // Новые
-
-           }
-
-        }
+       
 
         private void checkBox1_MouseClick_1(object sender, MouseEventArgs e) // Запуск с Windows
         {
@@ -278,9 +271,9 @@ namespace SatanBot
             if (checkBox4.CheckState == CheckState.Checked)
             {
                 Onfocus1(sender, e);
-                Onfocus2(sender, e);
-                textBox1.Text = Properties.Settings.Default.login;
-                textBox2.Text = Properties.Settings.Default.password;
+                Onfocus2(sender, e);                
+                textBox1.Text = (Properties.Settings.Default.login);
+                textBox2.Text = (Properties.Settings.Default.password);
             }
             //string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData); // 		path	"C:\\Users\\keyf\\AppData\\Roaming"	string
 
@@ -296,6 +289,5 @@ namespace SatanBot
             Properties.Settings.Default.Save();
         }
 
-       
     }
 }

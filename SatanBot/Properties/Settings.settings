@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="login" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="password" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="autologin" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

@@ -63,6 +63,23 @@ namespace SatanBot
 
         private void FindGuys()
         {
+            try
+            {
+                Browser.Navigate().GoToUrl("https://myanimeshelf.com/users/");
+            }
+            catch
+            {
+                if (checkBox3.CheckState == CheckState.Unchecked) // Без консоли запуск
+                {
+                    var Chromeservice = OpenQA.Selenium.Chrome.ChromeDriverService.CreateDefaultService();
+                    Chromeservice.HideCommandPromptWindow = true;
+                    Browser = new OpenQA.Selenium.Chrome.ChromeDriver(Chromeservice, new OpenQA.Selenium.Chrome.ChromeOptions());
+                }
+                else
+                    Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
+
+                goLogin();
+            }
             if (Browser == null)
             {
                 MessageBox.Show("Необходимо залогиниться и не закрывать браузер");
@@ -70,11 +87,12 @@ namespace SatanBot
             }
             Browser.Navigate().GoToUrl("http://myanimeshelf.com/");
             List<IWebElement> NewGuys = Browser.FindElements(By.CssSelector(".content td:nth-last-child(3) a")).ToList(); // Новые
-            List<string> NewGuyNames = new List<string>();
-            for (int i = 0; i < NewGuys.Count; i++)
+            List<string> NewGuyNames = Tools4help.GetString(NewGuys); // Получаем имена в список string
+            
+            /*for (int i = 0; i < NewGuys.Count; i++)
             {
                 NewGuyNames.Add(NewGuys[i].Text);
-            }
+            } */
 
             for (int i = 0; i < NewGuyNames.Count; i++)
             {
@@ -130,15 +148,19 @@ namespace SatanBot
         }
         private void button7_Click(object sender, EventArgs e) // Finder 
         {
-            try
+            
+            /*try
             {
                 IWebElement CheckForLogin = Browser.FindElement(By.CssSelector("div [class = 'blankRel tar'] nobr"));
                 string checker = CheckForLogin.Text.ToLower();
+                if (checker == null)
+                    goLogin();
             }
             catch
             {
                 goLogin();
-            }
+            } */
+            
             if (checkBox2.CheckState == CheckState.Unchecked)
             {
                 Welcome = new Thread(FindGuys);
