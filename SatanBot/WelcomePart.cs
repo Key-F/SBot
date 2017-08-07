@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using OpenQA.Selenium;
 using System.Threading;
 using System.Runtime.InteropServices;
+using OpenQA.Selenium.Chrome;
 
 namespace SatanBot
 {
@@ -69,14 +70,17 @@ namespace SatanBot
             }
             catch
             {
+
                 if (checkBox3.CheckState == CheckState.Unchecked) // Без консоли запуск
                 {
-                    var Chromeservice = OpenQA.Selenium.Chrome.ChromeDriverService.CreateDefaultService();
+                    var Chromeservice = ChromeDriverService.CreateDefaultService();
                     Chromeservice.HideCommandPromptWindow = true;
-                    Browser = new OpenQA.Selenium.Chrome.ChromeDriver(Chromeservice, new OpenQA.Selenium.Chrome.ChromeOptions());
+                    var options = new ChromeOptions();
+                    options.AddUserProfilePreference("profile.default_content_setting_values.images", 2); // Без картинок загрузка
+                    Browser = new ChromeDriver(Chromeservice, options);
                 }
                 else
-                    Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
+                    Browser = new ChromeDriver();
 
                 goLogin();
             }

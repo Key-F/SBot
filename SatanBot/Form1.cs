@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OpenQA.Selenium;
 using System.Threading;
-using System.Text;
 using System.Runtime.InteropServices;
 using System.Xml;
 using System.IO;
@@ -289,5 +288,7 @@ namespace SatanBot
             Properties.Settings.Default.Save();
         }
 
+        
+        
     }
 }

@@ -12,9 +12,21 @@ namespace SatanBot
 {
     public partial class Form1 : Form
     {
-
+        Thread BDay;
 
         private void button6_Click(object sender, EventArgs e) // Finder
+        {
+            BDay = new Thread(FindBD);
+            BDay.Start();
+        }
+
+        private void button9_Click(object sender, EventArgs e) // Stop
+        {
+            if (BDay != null)
+            BDay.Abort();
+        }
+
+        private void FindBD()
         {
             if (Browser == null)
             {
@@ -32,10 +44,21 @@ namespace SatanBot
                     IWebElement LastOnline = Browser.FindElement(By.CssSelector(".mc .broken tr:nth-last-child(6) td:nth-last-child(1) "));
                     string LastOnlineNoTime = LastOnline.Text.Substring(0, LastOnline.Text.LastIndexOf(','));
                     DateTime regDate = DateTime.ParseExact(LastOnlineNoTime, "dd MMM yy", CultureInfo.InvariantCulture);
-                    IWebElement Age = Browser.FindElement(By.CssSelector(".mb .broken tr:nth-last-child(4) td:nth-last-child(1)"));
-                    int start = (Age.Text.IndexOf("(") + 1);
-                    int end = Age.Text.LastIndexOf("years)");
-                    string age = Age.Text.Substring(start,  end - start - 1);
+                    string age;
+                    try
+                    {
+                        IWebElement Age = Browser.FindElement(By.CssSelector(".mb .broken tr:nth-last-child(4) td:nth-last-child(1)"));
+                        int start = (Age.Text.IndexOf("(") + 1);
+                        int end = Age.Text.LastIndexOf("years)");
+                        age = Age.Text.Substring(start, end - start - 1);
+                    }
+                    catch
+                    {
+                        IWebElement Age = Browser.FindElement(By.CssSelector(".mb .broken tr:nth-last-child(3) td:nth-last-child(1)")); // Не у всех указан пол
+                        int start = (Age.Text.IndexOf("(") + 1);
+                        int end = Age.Text.LastIndexOf("years)");
+                        age = Age.Text.Substring(start, end - start - 1);
+                    }
                     TimeSpan span = thisDay - regDate;
                     int deltaDay = span.Days;
                     bool fsb = false;
@@ -48,17 +71,15 @@ namespace SatanBot
                     {
                         if (yatutnuzhen7())
                             if (!fsb)
-                            BDaypostCreate(BDay[i], Convert.ToInt32(age));
-                        else
+                                BDaypostCreate(BDay[i], Convert.ToInt32(age));
+                            else
                                 BDaypostCreate("", Convert.ToInt32(age));
 
                     }
                 }
             }
 
-            }
-
-        
+        }
 
         private  bool yatutnuzhen7()
         {
@@ -78,6 +99,7 @@ namespace SatanBot
                     {                        
                         yatut = true;
                         mylastcomment = j;
+                        return !yatut;
                     }
                     else yatut = false;
                 }
@@ -99,11 +121,13 @@ namespace SatanBot
                 SendMessage.SendKeys("[CENTER] [SIZE=5] Happy B-Day![/SIZE] [/CENTER]");
             SendMessage.SendKeys(OpenQA.Selenium.Keys.Enter);
             SendMessage.SendKeys(OpenQA.Selenium.Keys.Enter);
-            if(age < 40)
+            if((age > 0)&&(age < 40))
             SendMessage.SendKeys("[SIZE=30][COLOR=#e1e15a][CENTER]");
-            else
+            else if (age < 100)
                 SendMessage.SendKeys("[SIZE=5][COLOR=#e1e15a][CENTER]");
-            for (int i = 0; i < age; i++)
+            else if (age > 100)
+                SendMessage.SendKeys("[SIZE=1][COLOR=#e1e15a][CENTER]");
+            for (int i = 0; i < Math.Abs(age); i++)
             {
                 SendMessage.SendKeys("i");
             }

@@ -26,9 +26,9 @@ namespace SatanBot
             List<DateTime> cDate = new List<DateTime>();
             for (int i = 0; i < WebEl.Count; i++)
             {
-                int start = WebEl[i].Text.IndexOf(")\r\n");
+                int start = WebEl[i].Text.IndexOf("\r\n");
                 int end = WebEl[i].Text.LastIndexOf(',');
-                Datestr.Add(WebEl[i].Text.Substring(start + 3, end - start - 3)); // Вытаскиваем только нужную часть, с датой
+                Datestr.Add(WebEl[i].Text.Substring(start + 2, end - start - 2)); // Вытаскиваем только нужную часть, с датой
                 //Datestr[i] = Datestr[i].Substring(0, );
                 cDate.Add(DateTime.ParseExact(Datestr[i], "dd MMM yyyy", CultureInfo.InvariantCulture));
             }

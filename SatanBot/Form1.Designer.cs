@@ -65,6 +65,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Options_Tab = new System.Windows.Forms.TabPage();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -72,7 +73,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -443,6 +445,7 @@
             this.BDay_Tab.Controls.Add(this.label8);
             this.BDay_Tab.Controls.Add(this.button6);
             this.BDay_Tab.Controls.Add(this.button1);
+            this.BDay_Tab.Controls.Add(this.button9);
             this.BDay_Tab.Location = new System.Drawing.Point(4, 22);
             this.BDay_Tab.Name = "BDay_Tab";
             this.BDay_Tab.Padding = new System.Windows.Forms.Padding(3);
@@ -483,7 +486,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(8, 234);
+            this.button1.Location = new System.Drawing.Point(3, 85);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(47, 20);
             this.button1.TabIndex = 0;
@@ -493,6 +496,7 @@
             // 
             // Options_Tab
             // 
+            this.Options_Tab.Controls.Add(this.checkBox7);
             this.Options_Tab.Controls.Add(this.checkBox6);
             this.Options_Tab.Controls.Add(this.checkBox5);
             this.Options_Tab.Controls.Add(this.checkBox4);
@@ -504,6 +508,16 @@
             this.Options_Tab.TabIndex = 2;
             this.Options_Tab.Text = "Options";
             this.Options_Tab.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(21, 117);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(126, 17);
+            this.checkBox6.TabIndex = 5;
+            this.checkBox6.Text = "Поверх других окон";
+            this.checkBox6.UseVisualStyleBackColor = true;
             // 
             // checkBox5
             // 
@@ -567,15 +581,26 @@
             this.timer1.Interval = 1800000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // checkBox6
+            // checkBox7
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(21, 117);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(126, 17);
-            this.checkBox6.TabIndex = 5;
-            this.checkBox6.Text = "Поверх других окон";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(21, 140);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(151, 17);
+            this.checkBox7.TabIndex = 6;
+            this.checkBox7.Text = "Загружать изображения";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button9.Location = new System.Drawing.Point(3, 219);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(254, 38);
+            this.button9.TabIndex = 16;
+            this.button9.Text = "Stop";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Form1
             // 
@@ -657,6 +682,8 @@
         private System.Windows.Forms.TextBox zahodDay;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.Button button9;
     }
 }
 
