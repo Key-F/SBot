@@ -94,5 +94,17 @@ namespace SatanBot.Properties {
                 this["pictues"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ontop {
+            get {
+                return ((bool)(this["ontop"]));
+            }
+            set {
+                this["ontop"] = value;
+            }
+        }
     }
 }

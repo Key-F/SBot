@@ -64,7 +64,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.Options_Tab = new System.Windows.Forms.TabPage();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -73,8 +75,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.button9 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -494,6 +494,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button9
+            // 
+            this.button9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button9.Location = new System.Drawing.Point(3, 219);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(254, 38);
+            this.button9.TabIndex = 16;
+            this.button9.Text = "Stop";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Options_Tab
             // 
             this.Options_Tab.Controls.Add(this.checkBox7);
@@ -509,6 +520,16 @@
             this.Options_Tab.Text = "Options";
             this.Options_Tab.UseVisualStyleBackColor = true;
             // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(21, 140);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(151, 17);
+            this.checkBox7.TabIndex = 6;
+            this.checkBox7.Text = "Загружать изображения";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
@@ -518,6 +539,7 @@
             this.checkBox6.TabIndex = 5;
             this.checkBox6.Text = "Поверх других окон";
             this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // checkBox5
             // 
@@ -580,27 +602,6 @@
             // 
             this.timer1.Interval = 1800000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(21, 140);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(151, 17);
-            this.checkBox7.TabIndex = 6;
-            this.checkBox7.Text = "Загружать изображения";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button9.Location = new System.Drawing.Point(3, 219);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(254, 38);
-            this.button9.TabIndex = 16;
-            this.button9.Text = "Stop";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Form1
             // 
