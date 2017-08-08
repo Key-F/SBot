@@ -12,6 +12,7 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Xml;
 using System.IO;
+using OpenQA.Selenium.Chrome;
 
 namespace SatanBot
 {
@@ -19,12 +20,12 @@ namespace SatanBot
     public partial class Form1 : Form
     {
 
-        IWebDriver Browser;
-        Thread Work;
+        IWebDriver Browser;        
         Thread Login;
         string login;
         public delegate void AddMessageDelegate(int good, int bad);
         public delegate void AddMessage(string hey);
+
         public Form1()
         {
             
@@ -56,12 +57,32 @@ namespace SatanBot
             {
                 if (checkBox3.CheckState == CheckState.Unchecked) // Без консоли запуск
                 {
-                    var Chromeservice = OpenQA.Selenium.Chrome.ChromeDriverService.CreateDefaultService();
+                    var Chromeservice = ChromeDriverService.CreateDefaultService();
                     Chromeservice.HideCommandPromptWindow = true;
-                    Browser = new OpenQA.Selenium.Chrome.ChromeDriver(Chromeservice, new OpenQA.Selenium.Chrome.ChromeOptions());
+                    if (checkBox7.CheckState == CheckState.Unchecked) // без картинок без консоли
+                    {
+                        var options = new ChromeOptions();
+                        options.AddUserProfilePreference("profile.default_content_setting_values.images", 2); // Без картинок загрузка
+                        Browser = new ChromeDriver(Chromeservice, options);
+                    }
+                    else // с картинками, без консоли
+                    {
+                        Browser = new ChromeDriver(Chromeservice, new ChromeOptions());
+                    }
                 }
                 else
-                    Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
+                
+                    if (checkBox7.CheckState == CheckState.Unchecked) // без картинок с консолью
+                    {
+                        var options = new ChromeOptions();
+                        options.AddUserProfilePreference("profile.default_content_setting_values.images", 2); // Без картинок загрузка
+                        Browser = new ChromeDriver(options);
+                    }
+
+                else // с картинками с консолью
+                {
+                    Browser = new ChromeDriver();
+                }
             }                      
             
             Login.Start();                  
@@ -96,7 +117,7 @@ namespace SatanBot
             
             try
             {
-                System.Threading.Thread.Sleep(2000); // todo Это вынести как отдельную настройку
+                Thread.Sleep(2000); // todo Это вынести как отдельную настройку
                 IWebElement CheckIfLoggedIn = Browser.FindElement(By.ClassName("blankRel"));
                 //PassWordField.SendKeys(password + OpenQA.Selenium.Keys.Enter);
                 if (CheckIfLoggedIn.Text.Contains("Welcome"))
@@ -110,55 +131,7 @@ namespace SatanBot
             }
 
         }
-        private void button4_Click(object sender, EventArgs e) // Follow
-        {
-            Work = new Thread(FollowStart);
-            Work.Start();           
-        }
-        private void FollowStart()
-        {
-            int goodtry = 0;
-            int badtry = 0;
-            if (Browser != null)
-            {
-                for (int i = Convert.ToInt32(textBox6.Text) - 1; i < Convert.ToInt32(textBox3.Text); i++)
-                {
-                    Browser.Navigate().GoToUrl("https://myanimeshelf.com/users/?p=" + (i + 1).ToString());
-                    List<IWebElement> FollowUsers = Browser.FindElements(By.ClassName("followMeButton")).ToList();
-                    foreach (IWebElement user in FollowUsers)
-                    {
-                        if (user.Text == "Follow")
-                        {
-                            try
-                            {
-                                user.Click();
-                                goodtry++;
-                                System.Threading.Thread.Sleep(Convert.ToInt32(textBox8.Text)); // 500 - стабильно, 100 - вообще нет, 250 - иногда проходы в конце
-                            }
-                            catch
-                            {
-                                badtry++;
-                            }
-                        }
-                        Invoke(new AddMessageDelegate(LogAdd), new object[] { goodtry, badtry });
-                    }
-
-                    if (FollowUsers == null) MessageBox.Show("Пользователи закончились");
-                    System.Threading.Thread.Sleep(Convert.ToInt32(textBox7.Text));
-                }
-            }
-            else MessageBox.Show("Log in first");
-        }
-        private void button5_Click(object sender, EventArgs e) // Стоп
-        {
-            if (Work != null) 
-            Work.Abort();
-            if (Login != null)
-            Login.Abort();
-        }
-
-        
-
+               
         private void Onfocus1(object sender, EventArgs e)
         {
             if (textBox1.Text == "Login")
@@ -201,6 +174,7 @@ namespace SatanBot
             textBox4.Text = good.ToString();
             textBox5.Text = bad.ToString();
         }
+
         public void Say(string hey) // Сказать в строке состояний
         {
             toolStripStatusLabel1.Text = hey;
@@ -208,7 +182,6 @@ namespace SatanBot
 
 
        
-
         private void checkBox1_MouseClick_1(object sender, MouseEventArgs e) // Запуск с Windows
         {
             if (checkBox1.CheckState == CheckState.Checked) // Запускаем
@@ -267,6 +240,7 @@ namespace SatanBot
         private void Form1_Load(object sender, EventArgs e)
         {
             checkBox4.Checked = Properties.Settings.Default.autologin;
+            checkBox7.Checked = Properties.Settings.Default.pictues;
             if (checkBox4.CheckState == CheckState.Checked)
             {
                 Onfocus1(sender, e);
@@ -285,6 +259,7 @@ namespace SatanBot
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Properties.Settings.Default.autologin = checkBox4.Checked;
+            Properties.Settings.Default.pictues = checkBox7.Checked;
             Properties.Settings.Default.Save();
         }
 

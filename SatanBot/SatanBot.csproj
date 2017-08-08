@@ -51,6 +51,9 @@
     <Compile Include="BDaysPart.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FollowPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -52,7 +52,6 @@ namespace SatanBot
             else
                 MessageBox.Show("Нужно выполнить вход и не закрывать браузер");
 
-
         }
 
         private void button8_Click(object sender, EventArgs e) // Stop 

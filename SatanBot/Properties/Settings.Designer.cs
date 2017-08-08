@@ -82,5 +82,17 @@ namespace SatanBot.Properties {
                 this["startwithwindows"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool pictues {
+            get {
+                return ((bool)(this["pictues"]));
+            }
+            set {
+                this["pictues"] = value;
+            }
+        }
     }
 }

@@ -112,6 +112,7 @@ namespace SatanBot
             while (j > 0);
             return !yatut; // тк нужен я только когда меня нет
         }
+
         private void BDaypostCreate(string name, int age)
         {
             IWebElement SendMessage = Browser.FindElement(By.Name("post"));
@@ -121,15 +122,21 @@ namespace SatanBot
                 SendMessage.SendKeys("[CENTER] [SIZE=5] Happy B-Day![/SIZE] [/CENTER]");
             SendMessage.SendKeys(OpenQA.Selenium.Keys.Enter);
             SendMessage.SendKeys(OpenQA.Selenium.Keys.Enter);
-            if((age > 0)&&(age < 40))
-            SendMessage.SendKeys("[SIZE=30][COLOR=#e1e15a][CENTER]");
+            if ((age > 0) && (age < 40))
+                SendMessage.SendKeys("[SIZE=30][COLOR=#e1e15a][CENTER]");
             else if (age < 100)
                 SendMessage.SendKeys("[SIZE=5][COLOR=#e1e15a][CENTER]");
-            else if (age > 100)
-                SendMessage.SendKeys("[SIZE=1][COLOR=#e1e15a][CENTER]");
-            for (int i = 0; i < Math.Abs(age); i++)
+            if (age > 100)
             {
-                SendMessage.SendKeys("i");
+                SendMessage.SendKeys("[SIZE=30][COLOR=#e1e15a][CENTER]");
+                SendMessage.SendKeys("iiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+            }
+            else
+            {
+                for (int i = 0; i < Math.Abs(age); i++)
+                {
+                    SendMessage.SendKeys("i");
+                }
             }
             SendMessage.SendKeys("[/CENTER][/COLOR][/SIZE]");
             SendMessage.SendKeys(OpenQA.Selenium.Keys.Enter);
